@@ -1,6 +1,13 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
+from logic.card import Card
+from logic.deck import Deck
+from logic.hand import Hand
+from logic.player import Player, Dealer
+from logic.game import BlackjackGame
+from logic.ui import BlackjackUI
+
 root = tk.Tk()
 root.title("Blackjack")
 root.geometry("1300x600")
@@ -19,9 +26,7 @@ frame.grid(row=0, column=0, sticky="NSEW")
 for i in range(10):
     frame.grid_columnconfigure(5, minsize=60)
 
-balance_label = ttk.Label(
-    frame, text=f"Balance: $500", font=("Helvetica", 16, "bold")
-)
+balance_label = ttk.Label(frame, text=f"Balance: $1000", font=("Helvetica", 16, "bold"))
 balance_label.grid(row=0, column=0, columnspan=7, sticky="W", pady=5, padx=5)
 
 ttk.Label(frame, text="Your Hand", font=("Helvetica", 12)).grid(
