@@ -1,12 +1,10 @@
 import tkinter as tk
-from logic.game import BlackjackGame
-from logic.ui import BlackjackUI
+from ui import BlackjackUI
 
 
 def main():
     root = tk.Tk()
-    game = BlackjackGame()
-    ui = BlackjackUI(root, game)
+    ui = BlackjackUI(root)
 
     root.mainloop()
 

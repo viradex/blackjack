@@ -3,9 +3,9 @@ from tkinter import ttk, messagebox
 
 
 class BlackjackUI:
-    def __init__(self, root, game):
+    def __init__(self, root):  # , game
         self.root = root
-        self.game = game
+        # self.game = game
 
         self.root.title("Blackjack")
         self.root.geometry("1300x600")
@@ -55,7 +55,7 @@ class BlackjackUI:
         self.hit_btn = ttk.Button(
             self.frame,
             text="Hit",
-            command=self.on_hit,
+            command=lambda: print("WIP"),
             style="TButton",
         )
         self.hit_btn.grid(row=4, column=0, columnspan=2, sticky="EW", pady=20, padx=2)
@@ -64,7 +64,7 @@ class BlackjackUI:
         self.stand_btn = ttk.Button(
             self.frame,
             text="Stand",
-            command=self.on_stand,
+            command=lambda: print("WIP"),
             style="TButton",
         )
         self.stand_btn.grid(row=4, column=2, columnspan=2, sticky="EW", pady=20, padx=2)
@@ -73,7 +73,7 @@ class BlackjackUI:
         self.dd_btn = ttk.Button(
             self.frame,
             text="Double Down",
-            command=self.on_double_down,
+            command=lambda: print("WIP"),
             style="TButton",
         )
         self.dd_btn.grid(row=4, column=4, sticky="EW", pady=20, padx=2)
@@ -87,12 +87,14 @@ class BlackjackUI:
         self.bet_btn = ttk.Button(
             self.frame,
             text="Place Bet",
-            command=self.on_place_bet,
+            command=lambda: print("WIP"),
             style="TButton",
         )
         self.bet_btn.grid(
             row=4, column=8, columnspan=2, sticky="EW", pady=10, padx=(10, 2)
         )
+
+        self.root.bind("<Return>", lambda e: print("WIP"))
 
     def create_card_slots(self):
         self.player_card_labels = []
@@ -113,48 +115,3 @@ class BlackjackUI:
             label.grid(row=2, column=(6 + i), sticky="W", pady=(16, 20), padx=2)
 
             self.dealer_card_labels.append(label)
-
-    def update_balance(self, balance):
-        pass
-
-    def update_player_hand(self, hand):
-        pass
-
-    def update_dealer_hand(self, hand, hide_second_card=False):
-        pass
-
-    def update_player_value(self, value):
-        pass
-
-    def update_dealer_value(self, value):
-        pass
-
-    def load_card_image(self, card):
-        pass
-
-    def load_card_back(self):
-        pass
-
-    def reset_board(self):
-        pass
-
-    def set_player_controls(self, enabled):
-        pass
-
-    def set_bet_controls(self, enabled):
-        pass
-
-    def on_hit(self):
-        pass
-
-    def on_stand(self):
-        pass
-
-    def on_double_down(self):
-        pass
-
-    def on_place_bet(self):
-        pass
-
-    def refresh_ui(self):
-        pass
