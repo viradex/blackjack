@@ -112,6 +112,6 @@ class BlackjackUI:
         for i in range(4):
             label = ttk.Label(self.frame, image=empty_img)
             label.image = empty_img
-            label.grid(row=2, column=(6 + i), sticky="W", pady=(16, 20), padx=2)
+            label.grid(row=2, column=(i + 6), sticky="W", pady=(16, 20), padx=2)
 
             self.dealer_card_labels.append(label)
